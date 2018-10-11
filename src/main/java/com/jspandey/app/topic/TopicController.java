@@ -1,6 +1,5 @@
 package com.jspandey.app.topic;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,12 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "cou/api")
 public class TopicController {
 	
 	@Autowired
 	private TopicService topicService;
 	
-	@RequestMapping
+	@RequestMapping("/topics")
 	public List<Topic> getAllTopics() {
 		return topicService.getAllTopic();
 	}
